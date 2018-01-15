@@ -45,4 +45,12 @@ public class LivreServiceImpl implements LivreService {
     public void updateLivre(Livre livre) throws CustomConstraintViolation {
         livreDao.updateLivre(livre);
     }
+
+    public LivreDao getLivreDao() {
+        return livreDao;
+    }
+
+    public void setLivreDao(LivreDao livreDao) {
+        this.livreDao = livreDao;
+    }
 }

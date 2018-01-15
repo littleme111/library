@@ -721,7 +721,8 @@ public class MainController {
             //Cast form.
             auteurForm auteurForm = (auteurForm) jif;
             //Get id and parse to long
-            Long idL = Long.parseLong(auteurForm.getLabelForAuteurId().getText().substring(12));
+            Long idL = Long.parseLong(auteurForm.getLabelForAuteurId()
+                    .getText().substring(12));
             //Get author
             Auteur auteur = auteurService.findById(idL);
             //Populate model

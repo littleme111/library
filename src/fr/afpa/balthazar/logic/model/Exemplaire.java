@@ -13,7 +13,6 @@ public class Exemplaire {
     private Livre livre;
     private Set<Historique> historique;
 
-
     public Exemplaire() {
     }
 

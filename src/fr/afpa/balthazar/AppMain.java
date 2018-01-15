@@ -19,5 +19,6 @@ public class AppMain {
 		MainController mainController =  appCtx.getBean(MainController.class);
 		//Set  up Menu Listeners.
 		mainController.setUpListeners();
+
 	}
 }

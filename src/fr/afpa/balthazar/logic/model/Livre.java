@@ -10,12 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
 
-
-
 @Entity
 @Table(name="livre")
 public class Livre {
-
 
     private String ISBN;
     private String title;
@@ -23,7 +20,6 @@ public class Livre {
     private Collection collection;
     private Set<Auteur> auteurs = new HashSet<Auteur>();
     private Set<Exemplaire> exemplaires;
-
 
     public Livre() {
     }

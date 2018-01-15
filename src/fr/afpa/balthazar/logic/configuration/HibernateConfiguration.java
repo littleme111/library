@@ -18,7 +18,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"fr.afpa.balthazar.logic.configuration"})
-@PropertySource(value = { "classpath:resources/application.properties" })
+@PropertySource(value = { "classpath:resources/messages/application.properties" })
 public class HibernateConfiguration {
 
     @Autowired

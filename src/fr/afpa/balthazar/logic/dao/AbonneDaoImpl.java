@@ -19,12 +19,10 @@ import java.util.List;
 @Repository("AbonneDao")
 public class AbonneDaoImpl extends AbstractDao implements AbonneDao{
 
-
     public void saveAbonne(Abonne abonne) {
         persist(abonne);
     }
     public void deleteAbonne(Abonne abonne){delete(abonne);}
-
 
     public Abonne findAbonneByName(String name){
         Query query = getSession().createQuery(
@@ -40,7 +38,6 @@ public class AbonneDaoImpl extends AbstractDao implements AbonneDao{
         Abonne abonne = (Abonne) query.list().get(0);
         return abonne;
     }
-
     public Abonne findAbonneByNoAbonne(String noAbonne){
         Query query = getSession().createQuery(
                 "from Abonne where noAbonne = :noAbonne");
@@ -48,8 +45,6 @@ public class AbonneDaoImpl extends AbstractDao implements AbonneDao{
         Abonne abonne = (Abonne) query.list().get(0);
         return abonne;
     }
-
-
 
     public String generateNoAbonne(){
         String prefix = "abo";
@@ -64,29 +59,22 @@ public class AbonneDaoImpl extends AbstractDao implements AbonneDao{
             if(l == null){
                 l = 1L;
             }
-            System.out.println(l);
-
             Calendar now = Calendar.getInstance();
             int year = now.get(Calendar.YEAR);
             String yearInString = String.valueOf(year);
-
             noAbonne = yearInString + prefix + l.toString();
 
             return noAbonne;
         } catch (Exception e) {
             e.printStackTrace();
         }
-//
-//
         return null;
 
     }
 
 
     public ArrayList<Abonne> searchAbonnes(String search) {
-
         Criteria criteria = getSession().createCriteria(Abonne.class);
-
         Criterion fname = Restrictions.ilike("nom", "%"+search+"%");
         Criterion lname = Restrictions.ilike("prenom","%"+search+"%");
         Criterion email = Restrictions.ilike("email","%"+search+"%");
